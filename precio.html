@@ -1,0 +1,201 @@
+<html>
+<!-- 
+  Proyecto: Calculador de valores de productos
+  Version:1.0
+  Fecha de Creacion 5-09-2021
+  Github :https://github.com/gloyolacl
+  Gracias
+-->
+    <title>Calculador de precio</title>
+    <head>
+        <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+        <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link
+            type="text/css"
+            href="bootstrap/css/bootstrap-responsive.min.css"
+            rel="stylesheet">
+        <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
+
+        <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+
+    </head>
+    <script type="text/javascript">
+        function calcula_neto() {
+            var iva = 1.19;
+            var ganacia = 1.25;
+            var cantidad = document
+                .getElementById("cantidadNeto")
+                .value;
+            var total = document
+                .getElementById("totalNeto")
+                .value;
+
+            var valorCompraProducto = (total / cantidad);
+
+            var ValorVentaProducto = parseInt((valorCompraProducto * iva) *ganacia);
+            document
+                .getElementById('lbvalorCompraProductoNeto')
+                .innerHTML = valorCompraProducto;
+            document
+                .getElementById('lbValorVentaProductoNeto')
+                .innerHTML = ValorVentaProducto;
+        }
+
+        function calcula_bruto() {
+            var iva = 1.19;
+            var ganacia = 1.25;
+            var cantidad = document
+                .getElementById("cantidadBruto")
+                .value;
+            var total = document
+                .getElementById("totalBruto")
+                .value;
+
+            var valorCompraProducto = (total / cantidad);
+            var ValaorCompraProductoConIva = (valorCompraProducto/iva);
+            var ValorVentaProducto = parseInt(valorCompraProducto *ganacia );
+            document
+                .getElementById('lbvalorCompraProductoBruto')
+                .innerHTML = ValaorCompraProductoConIva;
+            document
+                .getElementById('lbValorVentaProductoBruto')
+                .innerHTML = ValorVentaProducto;
+        }
+    </script>
+
+    <body>
+
+        <div class="container">
+            <h1c>Herramienta para calcular los valores
+            </h1>
+
+        </div>
+        <ul class="nav nav-pills nav-fill " id="pills-tab" role="tablist">
+            <li class="nav-item col-sm-6" role="presentation">
+                <button
+                    class="nav-link active"
+                    id="pills-neto-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-neto"
+                    type="button"
+                    role="tab"
+                    aria-controls="pills-neto"
+                    aria-selected="true">Neto</button>
+            </li>
+            <li class="nav-item col-sm-6" role="presentation">
+                <button
+                    class="nav-link"
+                    id="pills-bruto-tab"
+                    data-bs-toggle="pill"
+                    data-bs-target="#pills-bruto"
+                    type="button"
+                    role="tab"
+                    
+                    aria-controls="pills-bruto"
+                    aria-selected="false">Burto</button>
+            </li>
+
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+            <div
+                class="tab-pane fade show active"
+                id="pills-neto"
+                role="tabpanel"
+                aria-labelledby="pills-neto-tab">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                        Calculcar producto con Valor Neto
+                    </div>
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            <form class="row g-3">
+
+                                Cantidad de Productos
+                                <br/>
+                                <input id="cantidadNeto" type="number"/>
+                                <br/><br/>
+                                Valor Total Neto
+                                <br/>
+                                <input id="totalNeto" type="number"/>
+                                <br/><br/>
+                                <input
+                                    type="button"
+                                    class="btn btn-primary"
+                                    value="Calcular"
+                                    onclick="calcula_neto()"/><br/>
+                            </form>
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button type="button" class="btn btn-Warning">
+                            VALOR COMPRA
+                            <span class="badge bg-secondary">
+                                <label class="fs-5" id="lbvalorCompraProductoNeto">0</label>
+                            </span>
+                        </button>
+
+                        <button type="button" class="btn btn-success">
+                            VALOR VENTA<span class="badge bg-secondary">
+                                <label class="fs-5" id="lbValorVentaProductoNeto">0</label>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="tab-pane fade"
+                id="pills-bruto"
+                role="tabpanel"
+                aria-labelledby="pills-bruto-tab">
+
+                <div class="card text-center">
+                    <div class="card-header">
+                        Calculcar producto con Valor bruto (Sin IVA)
+                    </div>
+                    <div class="card-body">
+
+                        <p class="card-text">
+                            <form class="row g-3">
+
+                                Cantidad de Productos
+                                <br/>
+                                <input id="cantidadBruto" type="number"/>
+                                <br/><br/>
+                                Valor Total Neto
+                                <br/>
+                                <input id="totalBruto" type="number"/>
+                                <br/><br/>
+                                <input
+                                    type="button"
+                                    class="btn btn-primary"
+                                    value="Calcular"
+                                    onclick="calcula_bruto()"/><br/>
+                            </form>
+                        </p>
+
+                    </div>
+                    <div class="card-footer text-muted">
+                        <button type="button" class="btn btn-Warning">
+                            VALOR NETO DE LA COMPRA
+                            <span class="badge bg-secondary">
+                                <label class="fs-5" id="lbvalorCompraProductoBruto">0</label>
+                            </span>
+                        </button>
+                        <button type="button" class="btn btn-success">
+                            VALOR VENTA<span class="badge bg-secondary">
+                                <label class="fs-5" id="lbValorVentaProductoBruto">0</label>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
