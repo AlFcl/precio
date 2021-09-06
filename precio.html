@@ -18,51 +18,8 @@
 
      
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-
-
-        <script type="text/javascript">
-            var iva = 1.19;
-        var ganacia = 1.25;
-    function calcula_neto() {
-
-        var cantidad = document
-            .getElementById("cantidadNeto")
-            .value;
-        var total = document
-            .getElementById("totalNeto")
-            .value;
-
-        var valorCompraProducto = (total / cantidad);
-
-        var ValorVentaProducto = parseInt((valorCompraProducto * iva) *ganacia);
-        document
-            .getElementById('lbvalorCompraProductoNeto')
-            .innerHTML = valorCompraProducto;
-        document
-            .getElementById('lbValorVentaProductoNeto')
-            .innerHTML = ValorVentaProducto;
-    }
-
-    function calcula_bruto() {
-
-        var cantidad = document
-            .getElementById("cantidadBruto")
-            .value;
-        var total = document
-            .getElementById("totalBruto")
-            .value;
-
-        var valorCompraProducto = (total / cantidad);
-        var ValaorCompraProductoConIva = (valorCompraProducto/iva);
-        var ValorVentaProducto = parseInt(valorCompraProducto *ganacia );
-        document
-            .getElementById('lbvalorCompraProductoBruto')
-            .innerHTML = ValaorCompraProductoConIva;
-        document
-            .getElementById('lbValorVentaProductoBruto')
-            .innerHTML = ValorVentaProducto;
-    }
-</script>
+     
+        <script src="ca.js" type="text/javascript"></script>
     </head>
   
 
