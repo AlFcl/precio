@@ -5,18 +5,17 @@
     <head>
 
         <link rel="shortcut icon" href="favicon.ico"/>
-        <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
+        <link type="text/css" href="bootstrap/css/bootstrap.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link
-            type="text/css"
-            href="bootstrap/css/bootstrap-responsive.min.css"
-            rel="stylesheet">
+ 
         <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 
+        <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="ca.js" type="text/javascript"></script>
         <script src="https://kit.fontawesome.com/80dd7cfc06.js" crossorigin="anonymous"></script>
+  
     </head>
 
     <body>
@@ -249,19 +248,22 @@
                                                 aria-label="Sizing example input"
                                                 aria-describedby="inputGroup-sizing-lg">
                                         </div>
+
+                                        <div class="input-group">
+                                            <span class="input-group-text">cantidad de Envaces</span>
+                                            <span id="cantidadTotalEnvaceMostar" class="input-group-text">0</span>
+                                        </div>
                                         <br/>
                                         <div class="alert alert-info" role="alert">
                                             (Coca - cola es "BRUTO X BOT" y en CCU es "Total x unidad")
-                                          </div>
-
-                                        
+                                        </div>
 
                                         <div class="input-group input-group-lg">
                                             <span class="input-group-text" id="inputGroup-sizing-lg">
                                                 <i class="fas fa-dollar-sign"></i>
                                                 &nbsp;
                                                 <i class="fas fa-wine-bottle"></i>
-                                                &nbsp; Valor por Envaces</span>
+                                                &nbsp; Valor por Envases</span>
                                             <input
                                                 id="botella"
                                                 type="number"
@@ -269,12 +271,16 @@
                                                 aria-label="Sizing example input"
                                                 aria-describedby="inputGroup-sizing-lg">
                                         </div>
+                                        <div class="input-group">
+                                            <span class="input-group-text">Valor total</span>
+                                            <span id="ValorTotalCompraMostar" class="input-group-text">0</span>
+                                        </div>
                                         <br/>
                                         <input
                                             type="button"
                                             class="btn btn-primary"
                                             value="Calcular"
-                                            onclick="calcula_bruto()"/><br/>
+                                            onclick="calcula_bebidas()"/><br/>
                                     </form>
                                 </p>
 
@@ -283,12 +289,12 @@
                                 <button type="button" class="btn btn-Warning">
                                     VALOR NETO DE LA COMPRA
                                     <span class="badge bg-secondary">
-                                        <label class="fs-5" id="lbvalorCompraProductoBruto">0</label>
+                                        <label class="fs-5" id="ValorCompraBotellaConIvaMostrar">0</label>
                                     </span>
                                 </button>
                                 <button type="button" class="btn btn-success">
                                     VALOR VENTA<span class="badge bg-secondary">
-                                        <label class="fs-5" id="lbValorVentaProductoBruto">0</label>
+                                        <label class="fs-5" id="ValorVentaBotellaMostrar">0</label>
                                     </span>
                                 </button>
                             </div>
@@ -299,5 +305,6 @@
                 </div>
 
             </div>
+
         </body>
     </html>
