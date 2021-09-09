@@ -1,16 +1,10 @@
 <html>
-<!-- 
-  Proyecto: Calculador de valores de productos
-  Version:1.0
-  Fecha de Creacion 5-09-2021
-  Github :https://github.com/gloyolacl
-  Gracias
--->
+    <!-- Proyecto: Calculador de valores de productos Version:1.1 Fecha de Creacion
+    -09-2021 Github :https://github.com/gloyolacl Gracias -->
     <title>Calculador de precio</title>
     <head>
-        
 
-	<link rel="shortcut icon" href="favicon.ico"/>
+        <link rel="shortcut icon" href="favicon.ico"/>
         <link type="text/css" href="css/bootstrap.css" rel="stylesheet">
         <link type="text/css" href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
         <link
@@ -19,148 +13,291 @@
             rel="stylesheet">
         <script src="bootstrap/js/bootstrap.js" type="text/javascript"></script>
 
-     
         <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
-     
+
         <script src="ca.js" type="text/javascript"></script>
+        <script src="https://kit.fontawesome.com/80dd7cfc06.js" crossorigin="anonymous"></script>
     </head>
-  
 
     <body>
 
         <div class="container">
-            
-           <center>
-            <img src="logo.png" alt=""> <h1>Herramienta para calcular los valores
-            </h1></center>
 
-        </div>
-        <ul class="nav nav-pills nav-fill " id="pills-tab" role="tablist">
-            <li class="nav-item col-sm-6" role="presentation">
-                <button
-                    class="nav-link active"
-                    id="pills-neto-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-neto"
-                    type="button"
-                    role="tab"
-                    aria-controls="pills-neto"
-                    aria-selected="true">Neto</button>
-            </li>
-            <li class="nav-item col-sm-6" role="presentation">
-                <button
-                    class="nav-link"
-                    id="pills-bruto-tab"
-                    data-bs-toggle="pill"
-                    data-bs-target="#pills-bruto"
-                    type="button"
-                    role="tab"
-                    
-                    aria-controls="pills-bruto"
-                    aria-selected="false">Bruto</button>
-            </li>
+            <center>
+                <img src="logo.png" alt="">
+                <h1>Herramienta para calcular los valores
+                </h1>
+            </center>
 
-        </ul>
-        <div class="tab-content" id="pills-tabContent">
-            <div
-                class="tab-pane fade show active"
-                id="pills-neto"
-                role="tabpanel"
-                aria-labelledby="pills-neto-tab">
+            <div class="container">
+                <ul class="nav nav-pills nav-fill " id="pills-tab" role="tablist">
 
-                <div class="card text-center">
-                    <div class="card-header">
-                        Calculcar producto con Valor Neto
+                    <li class="nav-item col" role="presentation">
+                        <button
+                            class="nav-link active"
+                            id="pills-neto-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#pills-neto"
+                            type="button"
+                            role="tab"
+                            aria-controls="pills-neto"
+                            aria-selected="true">
+                            <i class="far fa-money-bill-alt"></i>&nbsp;Neto</button>
+                    </li>
+                    <li class="nav-item col" role="presentation">
+                        <button
+                            class="nav-link"
+                            id="pills-bruto-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#pills-bruto"
+                            type="button"
+                            role="tab"
+                            aria-controls="pills-bruto"
+                            aria-selected="false">
+                            <i class="fas fa-money-bill-alt"></i>&nbsp;Bruto</button>
+                    </li>
+                    <li class="nav-item col" role="presentation">
+                        <button
+                            class="nav-link"
+                            id="pills-bebida-tab"
+                            data-bs-toggle="pill"
+                            data-bs-target="#pills-bebida"
+                            type="button"
+                            role="tab"
+                            aria-controls="pills-bebida"
+                            aria-selected="false">
+                            <i class="fas fa-wine-bottle"></i>&nbsp;Bebidas</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div
+                        class="tab-pane fade show active"
+                        id="pills-neto"
+                        role="tabpanel"
+                        aria-labelledby="pills-neto-tab">
+
+                        <div class="card text-center">
+                            <div class="card-header">
+                                Calculcar producto con Valor Neto
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text">
+                                    <form class="row g-3">
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-sort-numeric-up"></i>
+                                                &nbsp;Cnt de Productos</span>
+                                            <input
+                                                id="cantidadNeto"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                &nbsp; Total Neto</span>
+                                            <input
+                                                id="totalNeto"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+
+                                        <br/>
+                                        <input
+                                            type="button"
+                                            class="btn btn-primary"
+                                            value="Calcular"
+                                            onclick="calcula_neto()"/><br/>
+                                    </form>
+                                </p>
+
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="button" class="btn btn-Warning">
+                                    VALOR COMPRA
+                                    <span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbvalorCompraProductoNeto">0</label>
+                                    </span>
+                                </button>
+
+                                <button type="button" class="btn btn-success">
+                                    VALOR VENTA<span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbValorVentaProductoNeto">0</label>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
-                    <div class="card-body">
+                    <div
+                        class="tab-pane fade"
+                        id="pills-bruto"
+                        role="tabpanel"
+                        aria-labelledby="pills-bruto-tab">
 
-                        <p class="card-text">
-                            <form class="row g-3">
+                        <div class="card text-center">
+                            <div class="card-header">
+                                Calculcar producto con Valor bruto (Sin IVA)
+                            </div>
+                            <div class="card-body">
 
-                                Cantidad de Productos
-                                <br/>
-                                <input id="cantidadNeto" type="number"/>
-                                <br/><br/>
-                                Valor Total Neto
-                                <br/>
-                                <input id="totalNeto" type="number"/>
-                                <br/><br/>
-                                <input
-                                    type="button"
-                                    class="btn btn-primary"
-                                    value="Calcular"
-                                    onclick="calcula_neto()"/><br/>
-                            </form>
-                        </p>
+                                <p class="card-text">
+                                    <form class="row g-3">
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-sort-numeric-up"></i>
+                                                &nbsp;Cnt de Productos</span>
+                                            <input
+                                                id="cantidadBruto"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+
+                                        <br/>
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                &nbsp; Total Bruto</span>
+                                            <input
+                                                id="totalBruto"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+
+                                        <br/>
+
+                                        <input
+                                            type="button"
+                                            class="btn btn-primary"
+                                            value="Calcular"
+                                            onclick="calcula_bruto()"><br/>
+
+                                        </input>
+                                    </form>
+                                </p>
+
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="button" class="btn btn-Warning">
+                                    VALOR NETO DE LA COMPRA
+                                    <span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbvalorCompraProductoBruto">0</label>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    VALOR VENTA<span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbValorVentaProductoBruto">0</label>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
 
                     </div>
-                    <div class="card-footer text-muted">
-                        <button type="button" class="btn btn-Warning">
-                            VALOR COMPRA
-                            <span class="badge bg-secondary">
-                                <label class="fs-5" id="lbvalorCompraProductoNeto">0</label>
-                            </span>
-                        </button>
 
-                        <button type="button" class="btn btn-success">
-                            VALOR VENTA<span class="badge bg-secondary">
-                                <label class="fs-5" id="lbValorVentaProductoNeto">0</label>
-                            </span>
-                        </button>
+                    <div
+                        class="tab-pane fade"
+                        id="pills-bebida"
+                        role="tabpanel"
+                        aria-labelledby="pills-bebida-tab">
+
+                        <div class="card text-center">
+                            <div class="card-header">
+                                Calculcar precios de bebidas
+                            </div>
+                            <div class="card-body">
+
+                                <p class="card-text">
+                                    <form class="row g-3">
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-boxes"></i>
+                                                &nbsp;Cantidad de Packs</span>
+                                            <input
+                                                id="pack"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+                                        <br/>
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-box-open"></i>
+                                                &nbsp;Cantidad de Envaces por Pack</span>
+                                            <input
+                                                id="cantidadPack"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+                                        <br/>
+                                        <div class="alert alert-info" role="alert">
+                                            (Coca - cola es "BRUTO X BOT" y en CCU es "Total x unidad")
+                                          </div>
+
+                                        
+
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-text" id="inputGroup-sizing-lg">
+                                                <i class="fas fa-dollar-sign"></i>
+                                                &nbsp;
+                                                <i class="fas fa-wine-bottle"></i>
+                                                &nbsp; Valor por Envaces</span>
+                                            <input
+                                                id="botella"
+                                                type="number"
+                                                class="form-control"
+                                                aria-label="Sizing example input"
+                                                aria-describedby="inputGroup-sizing-lg">
+                                        </div>
+                                        <br/>
+                                        <input
+                                            type="button"
+                                            class="btn btn-primary"
+                                            value="Calcular"
+                                            onclick="calcula_bruto()"/><br/>
+                                    </form>
+                                </p>
+
+                            </div>
+                            <div class="card-footer text-muted">
+                                <button type="button" class="btn btn-Warning">
+                                    VALOR NETO DE LA COMPRA
+                                    <span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbvalorCompraProductoBruto">0</label>
+                                    </span>
+                                </button>
+                                <button type="button" class="btn btn-success">
+                                    VALOR VENTA<span class="badge bg-secondary">
+                                        <label class="fs-5" id="lbValorVentaProductoBruto">0</label>
+                                    </span>
+                                </button>
+                            </div>
+                        </div>
+
                     </div>
+
                 </div>
 
             </div>
-            <div
-                class="tab-pane fade"
-                id="pills-bruto"
-                role="tabpanel"
-                aria-labelledby="pills-bruto-tab">
-
-                <div class="card text-center">
-                    <div class="card-header">
-                        Calculcar producto con Valor bruto (Sin IVA)
-                    </div>
-                    <div class="card-body">
-
-                        <p class="card-text">
-                            <form class="row g-3">
-
-                                Cantidad de Productos
-                                <br/>
-                                <input id="cantidadBruto" type="number"/>
-                                <br/><br/>
-                                Valor Total Neto
-                                <br/>
-                                <input id="totalBruto" type="number"/>
-                                <br/><br/>
-                                <input
-                                    type="button"
-                                    class="btn btn-primary"
-                                    value="Calcular"
-                                    onclick="calcula_bruto()"/><br/>
-                            </form>
-                        </p>
-
-                    </div>
-                    <div class="card-footer text-muted">
-                        <button type="button" class="btn btn-Warning">
-                            VALOR NETO DE LA COMPRA
-                            <span class="badge bg-secondary">
-                                <label class="fs-5" id="lbvalorCompraProductoBruto">0</label>
-                            </span>
-                        </button>
-                        <button type="button" class="btn btn-success">
-                            VALOR VENTA<span class="badge bg-secondary">
-                                <label class="fs-5" id="lbValorVentaProductoBruto">0</label>
-                            </span>
-                        </button>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-    </div>
-</body>
+        </body>
+    </html>
