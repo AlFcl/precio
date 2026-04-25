@@ -1,15 +1,29 @@
+# Alfcl Precio
 
-# Configuracion 
-En el archivo en la parte  superiror en el javascript tienes que configurar 2 variables(Despues lo modificare )
-los cuales son 
-**IVA** y **GANANCIA**
-Colocar tu cantidad de procentaje de iva y  gancia 
+Plugin de calculadora de precios creado por alf.cl.
 
-    var  iva = 1.19;
-    var  ganacia = 1.25;
+## Shortcodes
 
+### Calculadora de precios
 
-# versiones
+```text
+[alf_precio]
 ```
- - [master]  Version de inicio del proyecto. y se deja la base de este mismo todo funcionando
- - [2]  Se sube la version web y pagina de prueba
+
+Parametros opcionales:
+
+```text
+[alf_precio iva="19" ganancia="25" bebidas="20"]
+```
+
+Alias disponible:
+
+```text
+[alfcl_precio]
+```
+
+- `iva`: porcentaje de IVA inicial.
+- `ganancia`: margen inicial para productos generales.
+- `bebidas`: margen inicial para bebidas.
+
+La persona tambien puede cambiar estos porcentajes desde la interfaz publica antes de calcular.
